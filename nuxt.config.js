@@ -72,6 +72,17 @@ export default {
       new webpack.ProvidePlugin({
         '_': path.resolve(__dirname, './src/lodash.js')
       })
-    ]
+    ],
+    analyze: true,
+    productionSourceMap: false,
+    productionGzip: true,
+    productionGzipExtensions: ['js', 'css', 'svg']
   }
+  // 没必要
+  // http: {
+  //   gzip: on,
+  //   gzip_min_length: 200,
+  //   gzip_comp_level: 2,
+  //   gzip_vary: on
+  // }
 }
