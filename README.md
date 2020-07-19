@@ -4,7 +4,7 @@
 
 将写好的vue-cli3项目平滑转为**nuxt.js**项目，对.eslintrc.js package.json等重新配置，修改路由等，实现了Vue SSR服务端渲染。
 先编译 `nuxt build`,再启动服务器 `nuxt start`，`nuxt generate` 在dist文件夹内生成静态站点，
-为了守护进程使用**pm2**,使用**nginx**进行负载均衡和反向代理。
+为了防止进程因shell关闭而关闭，使用**pm2**来守护进程,使用**nginx**进行负载均衡和反向代理。
 
 使用**webpack-bundle-analyzer**可视化资源分析工具，需要在nuxt.config.js配置一下，`npm run build --report`生成分析报告，根据报告对项目进行优化。
 * 将assets中的第三方插件文件以及不需编译的图片放到static中
@@ -15,10 +15,10 @@
 > 综上优化后 DOMContentLoaded 明显减小
 
 ## 二、功能介绍
-* 实现搜索框、搜索结果页列表
+* 基于ajax实现搜索框、搜索结果页列表
 * 实现swiper对搜索结果页tab横向切换
 * 搭建node服务，实现静态页面部署，并实现服务端渲染
-* 实现页面优化
+* 实现页面性能优化
 
 
 
